@@ -38,7 +38,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
         String authHeader = request.getHeader("Authorization");
 
-        // 🔹 No token
+        // No token
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             log.debug("Request sin token JWT -> {}", path);
             filterChain.doFilter(request, response);

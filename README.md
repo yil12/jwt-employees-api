@@ -122,3 +122,7 @@ src/main/java/com/prueba/jwt/employees
 ###  Nota
 
 - Se incluye colección de Postman para pruebas de la API con autenticación JWT.
+
+## Seguridad de Contraseñas
+
+- En relación con el requerimiento de “descifrar contraseñas”, se decidió no implementar dicha funcionalidad, ya que las contraseñas están encriptadas mediante BCrypt (Spring Security) y no son reversibles por seguridad. En su lugar, se valida mediante comparación segura de hashes.
