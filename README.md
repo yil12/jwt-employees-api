@@ -107,3 +107,6 @@ src/main/java/com/prueba/jwt/employees
 
 - http://localhost:8080/swagger-ui.html
 
+###  Nota
+
+- Se incluye colección de Postman para pruebas de la API con autenticación JWT.
