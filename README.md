@@ -3,7 +3,66 @@
 API REST desarrollada en **Spring Boot** para la gestión de empleados con autenticación mediante **JWT (JSON Web Token)**.
 
 ---
+## Demo en Producción
 
+### La API está desplegada en Render:
+
+[ Ver API en vivo](https://jwt-employees-api.onrender.com)
+
+## Documentación Swagger
+
+[ Ver Swagger](https://jwt-employees-api.onrender.com/swagger-ui/index.html)
+
+
+---
+##  Autenticación
+
+### Login
+
+**POST** `/auth/login`
+
+```json
+{
+  "username": "admin",
+  "password": "admin123*"
+}
+```
+
+### Respuesta
+```json
+{
+  "status": 200,
+  "message": "Autenticación exitosa",
+  "data": {
+    "token": "JWT_TOKEN"
+  }
+}
+```
+
+---
+##  Endpoints de Empleados
+
+### Crear empleado
+
+**POST** `/employees`
+
+### Obtener por ID
+
+**GET** `/employees/id`
+
+### Listar empleados
+
+**GET** `/employees`
+
+### Actualizar empleado
+
+**PUT** `/employees/id`
+
+### Eliminar empleado
+
+**DELETE** `/employees/id`
+
+----
 ## Características
 
 - Autenticación con JWT
@@ -44,53 +103,6 @@ src/main/java/com/prueba/jwt/employees
 └── security        # Filtros y handlers de seguridad  
 
 ---
-
-##  Autenticación
-
-### Login
-
-**POST** `/auth/login`
-
-```json
-{
-  "username": "admin",
-  "password": "admin123*"
-}
-```
-
-### Respuesta
-```json
-{
-  "status": 200,
-  "message": "Autenticación exitosa",
-  "data": {
-    "token": "JWT_TOKEN"
-  }
-}
-```
-
-##  Endpoints de Empleados
-
-### Crear empleado
-
-**POST** `/employees`
-
-### Obtener por ID
-
-**GET** `/employees/id`
-
-### Listar empleados
-
-**GET** `/employees`
-
-### Actualizar empleado
-
-**PUT** `/employees/id`
-
-### Eliminar empleado
-
-**DELETE** `/employees/id`
-
 
 ## Ejecución del proyecto
 
