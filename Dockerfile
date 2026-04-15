@@ -1,14 +1,16 @@
-# Usar imagen base de Java 17
+# Etapa 1: build con Maven
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
+
+# Etapa 2: runtime
 FROM eclipse-temurin:17-jdk-jammy
 
-# Directorio dentro del contenedor
 WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 
-# Copiar el .jar generado
-COPY target/*.jar app.jar
-
-# Exponer el puerto
 EXPOSE 8080
 
-# Ejecutar la app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
